@@ -1,0 +1,10 @@
+[
+    {
+      "ParameterKey": "myProjectName",
+      "ParameterValue": "HighAvailabilityApp"
+    },
+    {
+      "ParameterKey": "BucketName",
+      "ParameterValue": "myredrabbit4040bucket"
+    }
+  ]
