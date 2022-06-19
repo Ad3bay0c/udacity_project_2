@@ -55,7 +55,7 @@ Resources:
           systemctl start httpd
           systemctl enable httpd
           cd /var/www/html
-          echo "Welcome to Clinton's Udagram high availablity web application" > /var/www/html/index.html
+          aws s3 cp s3://myredrabbit4040bucket/index.html .
       # ToDo: AMI ID of Ubuntu Linux machine. Too get one, try creating a VM from the web console. 
       ImageId: ami-0022f774911c1d690
       # ToDo: Change the key-pair name, as applicable to you. 
@@ -122,3 +122,9 @@ Resources:
       VpcId: 
         Fn::ImportValue:
           Fn::Sub: "${myProjectName}-VPCID"
+Outputs:
+  URL:
+    Description: DNS of the LoadBalancer
+    Value: !Sub "http://${WebAppLB.DNSName}"
+    Export:
+      Name: !Sub "${myProjectName}-URL"
