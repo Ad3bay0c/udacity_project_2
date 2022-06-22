@@ -55,7 +55,7 @@ Resources:
           systemctl start httpd
           systemctl enable httpd
           cd /var/www/html
-          aws s3 cp s3://myredrabbit4040bucket/index.html .
+          echo "It works! Udagram, Udacity" > /var/www/html/index.html
       # ToDo: AMI ID of Ubuntu Linux machine. Too get one, try creating a VM from the web console. 
       ImageId: ami-0022f774911c1d690
       # ToDo: Change the key-pair name, as applicable to you. 
